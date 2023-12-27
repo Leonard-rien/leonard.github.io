@@ -1,71 +1,64 @@
-<!DOCTYPE html><html lang="fr">
-<head><title>Léonard Rien</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equip="Content-Type" content="text/html" charset="utf-8"/>
-<link rel="stylesheet" href="style.css"/>
-<link rel="manifest" href="/manifest.json"/>
-<link href="https://db.onlinewebfonts.com/c/800e985f75a5a56c2f7b4be502d286de?family=Burbank+Big+Condensed+Bold" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="fr">
 
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#webform').submit(function (event) {
-            // Empêcher le comportement par défaut (rechargement de la page)
-            event.preventDefault();
+<head>
+    <title>Léonard Rien</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="/manifest.json" />
+    <link href="https://db.onlinewebfonts.com/c/800e985f75a5a56c2f7b4be502d286de?family=Burbank+Big+Condensed+Bold" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#webform').submit(function (event) {
+                // Empêcher le comportement par défaut (rechargement de la page)
+                event.preventDefault();
 
-            // Récupérer les données du formulaire
-            var formData = $(this).serialize();
+                // Récupérer la valeur de l'input payload
+                var payloadValue = $('#payload').val();
 
-            // Envoyer la requête AJAX
-            $.ajax({
-                type: 'POST',
-                url: 'https://llamalab.com/automate/cloud/message',
-                data: formData,
-                success: function (response) {
-                    // Traiter la réponse ici
-                    console.log(response);
-                },
-                error: function (error) {
-                    // Gérer les erreurs ici
-                    console.error(error);
-                }
+                // Code secret et adresse
+                var secretValue = '2.HsJzmoZZlZbclVkegZ9zWjSx7tMfvjygPirVVsBd2wo';
+                var toValue = 'thynva607@gmail.com';
+
+                // Envoyer la requête AJAX
+                $.ajax({
+                    type: 'POST',
+                    url: 'https://llamalab.com/automate/cloud/message',
+                    data: {
+                        secret: secretValue,
+                        to: toValue,
+                        payload: payloadValue
+                    },
+                    success: function (response) {
+                        // Traiter la réponse ici
+                        console.log(response);
+                    },
+                    error: function (error) {
+                        // Gérer les erreurs ici
+                        console.error(error);
+                    }
+                });
             });
         });
-    });
-</script>
-
+    </script>
 </head>
 
 <body>
- <div class="header">
-    <div class="contenu-header">
-        <div class="contenu-texte-header">Léonard Rien
-
+    <div class="header">
+        <div class="contenu-header">
+            <div class="contenu-texte-header">Léonard Rien</div>
         </div>
-        </div>
+    </div>
 
-     </div>
-    
-<br><br><br>
-<form id="webform" action="#" method="post" enctype="application/x-www-form-urlencoded">
-    <label for="secret">Secret :</label>
-    <input type="text" id="secret" name="secret" value="2.HsJzmoZZlZbclVkegZ9zWjSx7tMfvjygPirVVsBd2wo" required><br>
+    <br><br><br>
 
-    <label for="to">To :</label>
-    <input type="text" id="to" name="to" value="thynva607@gmail.com" required><br>
-
-    <label for="device">Device :</label>
-    <input type="text" id="device" name="device" value=""><br>
-
-    <label for="priority">Priority :</label>
-    <input type="text" id="priority" name="priority" value="normal" required><br>
-
-    <label for="payload">Payload :</label>
-    <input type="text" id="payload" name="payload" value="Hello World!" required><br>
-
-    <input type="submit" value="Envoyer">
-</form>
-    </body>
-
+    <form id="webform" action="#" method="post" enctype="application/x-www-form-urlencoded">
+        <label for="payload">Payload :</label>
+        <input type="text" id="payload" name="payload" value="Hello World!" required><br>
+        <input type="submit" value="Envoyer">
+    </form>
+</body>
 
 </html>
