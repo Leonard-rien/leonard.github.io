@@ -1,26 +1,71 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Local</title>
-    <link rel="icon" type="image/png" href="etoile.png">
-    <style>
-        body {
-            background: linear-gradient(to bottom right, #9900FF, #FF0000);
-            height: 100vh;
-        }
+<!DOCTYPE html><html lang="fr">
+<head><title>Léonard Rien</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equip="Content-Type" content="text/html" charset="utf-8"/>
+<link rel="stylesheet" href="style.css"/>
+<link rel="manifest" href="/manifest.json"/>
+<link href="https://db.onlinewebfonts.com/c/800e985f75a5a56c2f7b4be502d286de?family=Burbank+Big+Condensed+Bold" rel="stylesheet">
 
-        .titre {
-            color: white;
-            font-size: 36px;
-            text-align: center;      
-        }
-        .h1{
-            text-align: center; 
-        }
-    </style>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#webform').submit(function (event) {
+            // Empêcher le comportement par défaut (rechargement de la page)
+            event.preventDefault();
+
+            // Récupérer les données du formulaire
+            var formData = $(this).serialize();
+
+            // Envoyer la requête AJAX
+            $.ajax({
+                type: 'POST',
+                url: 'https://llamalab.com/automate/cloud/message',
+                data: formData,
+                success: function (response) {
+                    // Traiter la réponse ici
+                    console.log(response);
+                },
+                error: function (error) {
+                    // Gérer les erreurs ici
+                    console.error(error);
+                }
+            });
+        });
+    });
+</script>
+
 </head>
+
 <body>
-    <h1 class="titre">Bienvenue sur le wikipédia de ma personne !</h1>
-    <a href="page1.html">Page test</a>
-</body>
+ <div class="header">
+    <div class="contenu-header">
+        <div class="contenu-texte-header">Léonard Rien
+
+        </div>
+        </div>
+
+     </div>
+    
+<br><br><br>
+<form id="webform" action="#" method="post" enctype="application/x-www-form-urlencoded">
+    <label for="secret">Secret :</label>
+    <input type="text" id="secret" name="secret" value="2.HsJzmoZZlZbclVkegZ9zWjSx7tMfvjygPirVVsBd2wo" required><br>
+
+    <label for="to">To :</label>
+    <input type="text" id="to" name="to" value="thynva607@gmail.com" required><br>
+
+    <label for="device">Device :</label>
+    <input type="text" id="device" name="device" value=""><br>
+
+    <label for="priority">Priority :</label>
+    <input type="text" id="priority" name="priority" value="normal" required><br>
+
+    <label for="payload">Payload :</label>
+    <input type="text" id="payload" name="payload" value="Hello World!" required><br>
+
+    <input type="submit" value="Envoyer">
+</form>
+    </body>
+
+
 </html>
