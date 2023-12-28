@@ -11,6 +11,10 @@ app.post('/writeText', (req, res) => {
     const texteRecu = req.body.texte;
     console.log('Texte reçu:', texteRecu);
 
+const bodyContent = request.body;
+console.log('Contenu du corps de la requête :', bodyContent);
+
+      
     // Traitez le texte comme nécessaire
     // ...
 
