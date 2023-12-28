@@ -22,10 +22,10 @@ app.post('/writeText', (req, res) => {
 
 module.exports.handler = async (event, context) => {
   try {
-    console.log('Function executed with event:', event);
+
 
     // Afficher le corps de la requête sans le parser
-    console.log('Contenu du corps de la requête :', event.body);
+    console.log(event.body);
 
     // Traitez le texte comme nécessaire
     // ...
