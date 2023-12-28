@@ -14,7 +14,7 @@ exports.handler = async function (event, context) {
   } catch (error) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Une erreur s'est produite.' }),
+      body: JSON.stringify({ error: 'Une erreur sest produite.' }),
     };
   }
 };
