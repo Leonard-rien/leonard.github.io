@@ -10,10 +10,6 @@ app.post('/writeText', (req, res) => {
     const texteRecu = req.body.texte;
     console.log('Texte reçu:', texteRecu);
 
-    // Utilisez le même nom de variable que précédemment
-    const bodyContent = req.body;
-    console.log('Contenu du corps de la requête :', bodyContent);
-
     // Traitez le texte comme nécessaire
     // ...
 
@@ -25,11 +21,24 @@ app.post('/writeText', (req, res) => {
 });
 
 module.exports.handler = async (event, context) => {
-  console.log('Function executed with event:', event);
-  // ...
+  try {
+    console.log('Function executed with event:', event);
 
-  return {
-    statusCode: 200,
-    body: JSON.stringify({ message: 'Function executed successfully.' }),
-  };
+    const requestBody = JSON.parse(event.body);
+    console.log('Contenu du corps de la requête :', requestBody);
+
+    // Traitez le texte comme nécessaire
+    // ...
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ message: 'Function executed successfully.' }),
+    };
+  } catch (error) {
+    console.error('Erreur:', error);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: 'Une erreur s\'est produite.' }),
+    };
+  }
 };
