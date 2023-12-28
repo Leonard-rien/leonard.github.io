@@ -22,11 +22,22 @@ app.post('/writeText', (req, res) => {
 });
 
 module.exports.handler = async (event, context) => {
-  console.log('Function executed with event:', event);
-  // ...
+  try {
+    const requestBody = JSON.parse(event.body);
+    console.log('Texte reçu:', requestBody.texte);
 
-  return {
-    statusCode: 200,
-    body: JSON.stringify({ message: 'Function executed successfully.' }),
-  };
+    // Traitez le texte comme nécessaire
+    // ...
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ message: 'Texte reçu avec succès.' }),
+    };
+  } catch (error) {
+    console.error('Erreur:', error);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: 'Une erreur s\'est produite.' }),
+    };
+  }
 };
