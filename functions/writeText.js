@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 
 app.post('/writeText', (req, res) => {
   try {
-    const texteRecu = req.body.texte;
+    const texteRecu = req.body;
     console.log('Texte reçu:', texteRecu);
 
     // Traitez le texte comme nécessaire
@@ -21,23 +21,4 @@ app.post('/writeText', (req, res) => {
   }
 });
 
-module.exports.handler = async (event, context) => {
-  try {
-    const requestBody = JSON.parse(event.body);
-    console.log('Texte reçu:', requestBody.texte);
-
-    // Traitez le texte comme nécessaire
-    // ...
-
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ message: 'Texte reçu avec succès.' }),
-    };
-  } catch (error) {
-    console.error('Erreur:', error);
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: 'Une erreur s\'est produite.' }),
-    };
-  }
-};
+module.exports.handler = serverless(app);
