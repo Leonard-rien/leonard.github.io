@@ -47,7 +47,7 @@
 
 
 
-     // Fonction pour mettre à jour le texte dans l'élément <h1>
+  // Fonction pour mettre à jour le texte dans l'élément <h1>
     function updateText(newText) {
       document.getElementById('dynamicText').innerText = newText;
     }
@@ -55,7 +55,13 @@
     // Appelez la fonction au chargement de la page
     window.onload = function () {
       // Faites une requête HTTP pour obtenir le contenu de la requête
-      fetch('/.netlify/functions/writeText')
+      fetch('/.netlify/functions/writeText', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ texte: 'Nouveau texte' }), // Vous pouvez changer cela pour envoyer le texte souhaité
+      })
         .then(response => response.json())
         .then(data => {
           // Mettez à jour le texte dans l'élément <h1>
@@ -63,6 +69,9 @@
         })
         .catch(error => console.error('Erreur lors de la récupération du texte:', error));
     };
+
+
+        
     </script>
 </head>
 
