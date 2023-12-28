@@ -21,4 +21,12 @@ app.post('/writeText', (req, res) => {
   }
 });
 
-module.exports.handler = serverless(app);
+module.exports.handler = async (event, context) => {
+  console.log('Function executed with event:', event);
+  // ...
+
+  return {
+    statusCode: 200,
+    body: JSON.stringify({ message: 'Function executed successfully.' }),
+  };
+};
