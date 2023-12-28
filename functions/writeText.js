@@ -24,8 +24,8 @@ module.exports.handler = async (event, context) => {
   try {
     console.log('Function executed with event:', event);
 
-    const requestBody = JSON.parse(event.body);
-    console.log('Contenu du corps de la requête :', requestBody);
+    // Afficher le corps de la requête sans le parser
+    console.log('Contenu du corps de la requête :', event.body);
 
     // Traitez le texte comme nécessaire
     // ...
