@@ -1,4 +1,3 @@
-// functions/writeText.js
 const express = require('express');
 const serverless = require('serverless-http');
 const bodyParser = require('body-parser');
@@ -11,10 +10,10 @@ app.post('/writeText', (req, res) => {
     const texteRecu = req.body.texte;
     console.log('Texte reçu:', texteRecu);
 
-const bodyContent = request.body;
-console.log('Contenu du corps de la requête :', bodyContent);
+    // Utilisez le même nom de variable que précédemment
+    const bodyContent = req.body;
+    console.log('Contenu du corps de la requête :', bodyContent);
 
-      
     // Traitez le texte comme nécessaire
     // ...
 
