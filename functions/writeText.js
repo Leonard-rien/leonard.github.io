@@ -33,7 +33,7 @@ module.exports.handler = async (event, context) => {
 
     return {
       statusCode: 200,
-      body: event.body,
+      body: JSON.stringify({ message: event.body}),
     };
   } catch (error) {
     console.error('Erreur:', error);
