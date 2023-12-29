@@ -28,12 +28,15 @@ module.exports.handler = async (event, context) => {
     // Afficher le corps de la requête sans le parser
     console.log(event.body);
 
+      const bodyString = String(event.body); // Convertir event.body en une chaîne
+  console.log(bodyString); 
+
     // Traitez le texte comme nécessaire
     // ...
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: event.body}),
+      body: JSON.stringify({ message: bodyString }),
     };
   } catch (error) {
     console.error('Erreur:', error);
