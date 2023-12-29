@@ -57,6 +57,7 @@ fetch('/.netlify/functions/writeText', {
 .then(data => {
   // Mettez à jour la page avec les données reçues
   document.getElementById('dynamicContent').innerText = data.message;
+console.log(data);
 })
 .catch(error => console.error('Erreur lors de la requête:', error));
 
