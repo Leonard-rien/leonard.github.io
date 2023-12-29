@@ -45,6 +45,24 @@
 
 
 
+
+
+
+
+fetch('/.netlify/functions/writeText', {
+  method: 'POST',
+  // Autres options de requête si nécessaire
+})
+.then(response => response.text())
+.then(data => {
+  // Mettez à jour la page avec les données reçues
+  document.getElementById('dynamicContent').innerText = data;
+})
+.catch(error => console.error('Erreur lors de la requête:', error));
+
+
+        
+
     </script>
 
 
