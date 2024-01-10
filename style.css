@@ -13,7 +13,7 @@ body {
   font-weight: 100;
   font-size: min(3vw,1.5em);
   color: var(--text);
-  --largeur: min(70vw,900px);
+  --largeur: min(80vw,900px);
 }
 
 .corps{
