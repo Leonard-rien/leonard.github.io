@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Léonard Rien</title>
+    <link rel="icon" type="image/png" href="coeur_blanc.webp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="/manifest.json" />
+    <link href="https://db.onlinewebfonts.com/c/800e985f75a5a56c2f7b4be502d286de?family=Burbank+Big+Condensed+Bold" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#webform').submit(function (event) {
+                // Empêcher le comportement par défaut (rechargement de la page)
+                event.preventDefault();
+
+                // Récupérer la valeur de l'input payload
+                var payloadValue = $('#payload').val();
+
+                // Code secret et adresse
+                var secretValue = '2.HsJzmoZZlZbclVkegZ9zWjSx7tMfvjygPirVVsBd2wo';
+                var toValue = 'thynva607@gmail.com';
+
+                // Envoyer la requête AJAX
+                $.ajax({
+                    type: 'POST',
+                    url: 'https://llamalab.com/automate/cloud/message',
+                    data: {
+                        secret: secretValue,
+                        to: toValue,
+                        payload: payloadValue
+                    },
+                    success: function (response) {
+                        // Traiter la réponse ici
+                        console.log(response);
+                    },
+                    error: function (error) {
+                        // Gérer les erreurs ici
+                        console.error(error);
+                    }
+                });
+            });
+        });
+    </script>
+
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="contenu-header">
+            <img src="coeur_blanc.webp" id="heartImage" class="coeur">Léonard Rien
+            <div class="contenu-texte-header"></div>
+        </div>
+    </div>
+    <br><br><br>
+    <span class="conteneur3">Bienvenue sur mon site web ! Pour l'instant y'a absolument rien car j'ai énormément la flemme d'avancer dessus... 
+        <br><br>À l'avenir il y aura plein de fonctionnalités, quand j'aurais réussi à implémenter un serveur pour le faire communiquer avec mon téléphone, mais en attendant tu peux m'envoyer des messages ci dessous !
+    </span>
+    <br><br>
+    <form class="form" id="webform" action="#" method="post" enctype="application/x-www-form-urlencoded">
+        <input class="message" type="text" id="payload" name="payload" placeholder="Message :" required>
+        <input class="envoyer" type="submit" value="Envoyer">
+    </form>
+   
+</body>
+
+</html>

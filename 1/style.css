@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:700|Poppins:400');
+
+@font-face {
+  font-family: 'undertale';
+  src: url(undertale-deltarune-text-font-extended.ttf);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  font-family: 'Poppins';
+  font-weight: 100;
+  font-size: 1.5em;
+  color: var(--text); 
+
+}
+
+
+
+
+.header {
+  font-family: 'undertale';
+  font-weight: 100;
+    background-color: var(--background);
+  color: var(--text); /* Couleur du texte */
+  font-size: 1.5em;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+    border-bottom: solid 1px #222;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    }
+
+    .contenu-header {
+      text-align: left;
+      margin-left: 15%;
+      margin-right: 15%;
+      display: flex;
+      align-items: center;
+  
+    }
+  
+
+    .coeur{
+      height: 50px;
+      width: 50px;
+      margin-right: 10px; 
+    }
+
+.conteneur1{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 15%;
+  background-color: var(--background1);
+  height: 500px;
+  width: 50vw;
+  border-radius: 40px;
+  padding: 10px;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.form{
+  display: flex;
+  margin-left: 15%;
+  background-color: var(--background1);
+  width: 900px;
+  border-radius: 40px;
+  padding: 40px;
+  justify-content: center;
+  align-items: center;
+}
+.message {
+background-color: var(--background2);
+  color: white;
+  border: none;
+  border-radius: 20px;
+     height:70px;
+  width: 300px;
+   font-family: 'Poppins';
+  font-weight: 100;
+  font-size: 1em;
+  color: var(--text);
+  margin-left: 10px; 
+  padding-left: 20px;;
+}
+
+.envoyer{
+   height:70px;
+  width: 150px;
+  background:linear-gradient(to bottom right,#8800FF,#FF0000);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: #ffffff 3px solid;
+  color: #ffffff;
+  font-family: 'Poppins';
+  font-weight: 100;
+  font-size: 1em;
+  margin: 20px;
+}
+
+
+.conteneur3{
+  display: flex;
+  margin-left: 15%;
+  background-color: var(--background1);
+  width: 900px;
+  border-radius: 40px;
+  padding: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.boite1{
+  height:calc(50% - 5px);
+  width: calc(50% - 5px);
+  background-color: var(--background2);
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.conteneur2{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 15%;
+  background-color: var(--background1);
+  height: 100px;
+  width: 400px;
+  border-radius: 30px;
+  padding: 10px;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.boite2{
+  height:calc(100% - 5px);
+  width: calc(50% - 12px);
+  background:linear-gradient(to bottom right,#8800FF,#FF0000);
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: #ffffff 3px solid;
+  color: #ffffff;
+  font-family: 'Poppins';
+  font-weight: 100;
+  font-size: 1em;
+
+}
+
+
+
+
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --text: #000000;
+        --background: #eeeeee;
+        --background1: #e8e8e8;
+        --background2: #ffffff;
+        --primary: #000000;
+        --secondary: #a8a8a8;
+        --accent: #11ff00;
+      }
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text: #ffffff;
+        --background: #000000;
+        --background1: #111111;
+        --background2: #222222;
+        --primary: #ffffff;
+        --secondary: #575757;
+        --accent: #11ff00;
+      }
+    }
+
+    @media screen and (max-width:1000px){
+    }
+
+    @media (prefers-color-scheme: light) {
+      .coeur {
+        content: url('coeur_noir.webp'); /* Image spécifique pour le thème sombre */
+      }
+        .header {
+        border-bottom: solid 1px #DDD;
+      }
+      }
+    
