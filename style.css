@@ -14,9 +14,6 @@ body {
   font-size: min(3vw,1.5em);
   color: var(--text);
   --largeur: min(80vw,900px);
-}
-
-.corps{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -40,10 +37,11 @@ body {
   display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 100px;
     }
 
     .contenu-header {
-      width:var(--largeur);
+      width:min(85vw,950px);
       text-align: left;
       display: flex;
       align-items: center;
@@ -56,28 +54,17 @@ body {
       margin-right: 10px; 
     }
 
-    .conteneur3{
+    .bloc{
       display: flex;
       background-color: var(--background1);
       width:var(--largeur);
       border-radius: 40px;
-      padding: 30px;
+      padding: 20px;
       justify-content: center;
       align-items: center;
-      margin-bottom: 50px;
-      margin-top: 100px;
+      margin-bottom: 20px;
+      margin-top: 20px;
     }
-
-
-.form{
-  display: flex;
-  background-color: var(--background1);
-  width:var(--largeur);
-  border-radius: 40px;
-  padding: 30px;
-  justify-content: center;
-  align-items: center;
-}
 
 .message {
 background-color: var(--background2);
@@ -85,13 +72,12 @@ background-color: var(--background2);
   border: none;
   border-radius: 20px;
      height:70px;
-  width: min(40vw,300px);
+  width: min(60vw,900px);
    font-family: 'Poppins';
   font-weight: 100;
   font-size: 1em;
   color: var(--text);
-  margin-left: 10px; 
-  padding-left: 20px;;
+  padding-left: 20px;
 }
 
 .boutonEnvoyer{
@@ -107,7 +93,7 @@ background-color: var(--background2);
   font-family: 'Poppins';
   font-weight: 100;
   font-size: 1em;
-  margin: 20px;
+  margin-left: 20px;
 }
 
 
