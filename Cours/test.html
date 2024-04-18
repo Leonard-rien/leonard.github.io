@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcul de la longueur du texte en pixels</title>
+    <style>
+        /* Styles pour assurer que le span a la même apparence que le texte */
+        span {
+            display: inline-block;
+            white-space: nowrap;
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <!-- Créez un span avec le texte à mesurer -->
+    <span id="textToMeasure">Votre tefffffffffffxte ici</span>
+
+    <script>
+        // Fonction pour calculer la largeur en pixels du texte
+        function getWidthOfText(text) {
+            // Créer un span temporaire pour mesurer la largeur
+            var span = document.getElementById("textToMeasure");
+            span.textContent = text;
+            // Obtenir la largeur du span
+            var width = span.offsetWidth;
+            // Réinitialiser le contenu du span
+          
+            // Retourner la largeur calculée
+            return width;
+        }
+
+        // Utilisation de la fonction getWidthOfText()
+        var text = "Votre texte ici";
+        var widthInPixels = getWidthOfText(text);
+        console.log("La largeur du texte en pixels est: " + widthInPixels);
+    </script>
+</body>
+</html>
